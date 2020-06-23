@@ -1,0 +1,23 @@
+{
+  "name": "Data_Structures_and_Algth_U_San_Diego",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseucarvajal/data-structures-and-algorithms-specialization-UC-San-Diego.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joseucarvajal/data-structures-and-algorithms-specialization-UC-San-Diego/issues"
+  },
+  "homepage": "https://github.com/joseucarvajal/data-structures-and-algorithms-specialization-UC-San-Diego#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}
