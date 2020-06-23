@@ -50,7 +50,6 @@ const rli = readline.createInterface({
     terminal: false
 });
 
-
 let lineCount = 0;
 let d;
 let m;
