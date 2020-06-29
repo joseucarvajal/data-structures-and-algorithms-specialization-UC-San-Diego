@@ -47,7 +47,7 @@ const rli = readline.createInterface({
 /**
  * stdin lines counter
  */
-lineCount = 0;
+let lineCount = 0;
 
 /**
  * adds revenue collection
