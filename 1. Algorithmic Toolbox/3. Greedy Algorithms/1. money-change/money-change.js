@@ -36,7 +36,7 @@ const rli = readline.createInterface({
 
 rli.on('line', (line) => {
     if (line !== '\n') {
-        const lineData = parseInt(line);
+        const lineData = parseInt(line, 10);
         const result = minMoneyCoinsChange(lineData);
         console.log(result);
         process.exit();

@@ -24,7 +24,7 @@ const rli = readline.createInterface({
 
 rli.on('line', (line) => {
     if (line !== '\n') {
-        const lineData = parseInt(line);
+        const lineData = parseInt(line, 10);
         const nFib = fibonacci(lineData);
         console.log(nFib);
         process.exit();
