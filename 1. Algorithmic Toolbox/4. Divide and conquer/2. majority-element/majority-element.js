@@ -50,30 +50,29 @@ const findMajorityElementDAC = (elements, left, right) => {
  * @param {Number} right 
  */
 const merge = (leftSide, rightSide, elements, left, medium, right) => {
+    let ocurrences = 0;
     if (leftSide.length === 0) {
-        const ocurrences = countOcurrences(elements, left, medium, rightSide[0]);
+        ocurrences = countOcurrences(elements, left, medium, rightSide[0]);
         return [rightSide[0], rightSide[1] + ocurrences];
     }
-    else if (rightSide.length === 0) {
-        const ocurrences = countOcurrences(elements, medium + 1, right, leftSide[0]);
+
+    if (rightSide.length === 0) {
+        ocurrences = countOcurrences(elements, medium + 1, right, leftSide[0]);
         return [leftSide[0], leftSide[1] + ocurrences];
     }
-    else {
-        if (leftSide[0] === rightSide[0]) {
-            return [leftSide[0], leftSide[1] + rightSide[1]];
-        }
-        else { //each side has different values
-            let ocurrences = 0;
-            if (leftSide[1] > rightSide[1]) {
-                ocurrences = countOcurrences(elements, medium + 1, right, leftSide[0]);
-                return [leftSide[0], leftSide[1] + ocurrences];
-            }
-            else {
-                ocurrences = countOcurrences(elements, left, medium, rightSide[0]);
-                return [rightSide[0], rightSide[1] + ocurrences];
-            }
-        }
+
+    if (leftSide[0] === rightSide[0]) {
+        return [leftSide[0], leftSide[1] + rightSide[1]];
     }
+
+    //each side has different values    
+    if (leftSide[1] > rightSide[1]) {
+        ocurrences = countOcurrences(elements, medium + 1, right, leftSide[0]);
+        return [leftSide[0], leftSide[1] + ocurrences];
+    }
+
+    ocurrences = countOcurrences(elements, left, medium, rightSide[0]);    
+    return [rightSide[0], rightSide[1] + ocurrences];
 }
 
 const countOcurrences = (arr, from, to, key) => {
