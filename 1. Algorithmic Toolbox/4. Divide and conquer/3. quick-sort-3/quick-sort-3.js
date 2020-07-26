@@ -1,5 +1,16 @@
 const readline = require('readline');
 
+/**
+ * Sort and array by applying Quick-sort-3, which is Quicksort based on 3 divisions
+ * a[i] < a[y] = a[x] < a[j],
+ * x: Randomized element index in array 
+ * a[i]: Elements less than a[x]
+ * a[y]: Elements equals to a[x]
+ * a[j]: Elements greater than a[x]
+ * @param {Array<Number>} arr Array of elements
+ * @param {Number} l Most left position in the array
+ * @param {Number} r Most right position in the array
+ */
 const quickSort3 = (arr, l, r) => {
     if (l >= r) {
         return;
@@ -11,7 +22,7 @@ const quickSort3 = (arr, l, r) => {
 }
 
 /**
- * 
+ * Divide the array in 3 partitions
  * @param {*} arr 
  * @param {*} l >= 0
  * @param {*} r 
