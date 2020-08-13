@@ -33,17 +33,17 @@ const findMajorityElementDAC = (elements, left, right) => {
 
     let medium = Math.floor((right + left) / 2);
 
-    //[0: most repeated value, 1: ocurrences counter]
     let leftSide = findMajorityElementDAC(elements, left, medium);
     let rightSide = findMajorityElementDAC(elements, medium + 1, right);
-
+    
+    //returns an array [0: most repeated value, 1: ocurrences counter]
     return merge(leftSide, rightSide, elements, left, medium, right);
 }
 
 /**
  * Returns array [0: most repeated value, 1: ocurrences counter]
- * @param {Array<Number>} leftArray 
- * @param {Array<Number>} rightArray 
+ * @param {Array<Number>} leftArray [0: most repeated value, 1: ocurrences counter] left side
+ * @param {Array<Number>} rightArray [0: most repeated value, 1: ocurrences counter] right side
  * @param {Array<Number>} elements 
  * @param {Number} left 
  * @param {Number} medium 

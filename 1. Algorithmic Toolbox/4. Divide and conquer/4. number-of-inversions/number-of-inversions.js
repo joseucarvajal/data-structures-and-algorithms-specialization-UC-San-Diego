@@ -26,7 +26,7 @@ const numberOfInversionsDAC = (arr, l, r) => {
     const leftCount = numberOfInversionsDAC(arr, l, m);
     const rightCount = numberOfInversionsDAC(arr, m + 1, r);
 
-    const combineCounter = countLeftInversionInRightSide(arr, l, m, r);
+    const combineCounter = countRightInversionInLeftSide(arr, l, m, r);
 
     return leftCount + rightCount + combineCounter;
 }
@@ -38,7 +38,7 @@ const numberOfInversionsDAC = (arr, l, r) => {
  * @param {Number} m Medium position
  * @param {Number} r Right position
  */
-const countLeftInversionInRightSide = (arr, l, m, r) => {
+const countRightInversionInLeftSide = (arr, l, m, r) => {
     let inversionsCounter = 0;
     for (let j = l; j <= m; j++) {
         inversionsCounter += countInversionsInArraySegment(arr, m + 1, r, arr[j]);
@@ -55,7 +55,6 @@ const countInversionsInArraySegment = (arr, from, length, value) => {
     }
     return inversionsCounter;
 }
-
 
 const rl = readline.createInterface({
     input: process.stdin,

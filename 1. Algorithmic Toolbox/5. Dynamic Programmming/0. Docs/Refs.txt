@@ -1,0 +1,2 @@
+Advanced dynamic programming lecture notes by Jeff Erickson
+	https://jeffe.cs.illinois.edu/teaching/algorithms/notes/D-faster-dynprog.pdf
